@@ -4,3 +4,9 @@ C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedProblems\TreeBas
 C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedProblems\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.csprojResolveAssemblyReference.cache
 C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedProblems\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.exe
 C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedProblems\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.pdb
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\bin\Debug\TreeBasedProblems.exe.config
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.exe
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.pdb
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\bin\Debug\TreeBasedProblems.exe
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\bin\Debug\TreeBasedProblems.pdb
+C:\Users\rajeshm\Documents\Visual Studio 2015\Projects\TreeBasedOperations\TreeBasedProblems\TreeBasedProblems\obj\Debug\TreeBasedProblems.csprojResolveAssemblyReference.cache

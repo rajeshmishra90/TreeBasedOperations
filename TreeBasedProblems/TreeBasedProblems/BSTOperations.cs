@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace TreeBasedProblems
@@ -17,7 +16,7 @@ namespace TreeBasedProblems
     {
         public static BstNode root { get; set; }
 
-        public BstNode Insert(BstNode root, int data)
+        private BstNode Insert(BstNode root, int data)
         {
             if (root == null)
             {
@@ -94,7 +93,7 @@ namespace TreeBasedProblems
             Console.WriteLine();
         }
 
-        public static int FindMin(BstNode root, int data)
+        public static int FindItem(BstNode root, int data)
         {
             if (root == null)
             {
@@ -109,13 +108,131 @@ namespace TreeBasedProblems
             {
                 if (root.Data > data)
                 {
-                    return FindMin(root.Left, data);
+                    return FindItem(root.Left, data);
                 }
                 else
                 {
-                    return FindMin(root.Right, data);
+                    return FindItem(root.Right, data);
                 }
             }
+        }
+
+        public static BstNode FindMin(BstNode root)
+        {
+            if (root == null)
+            {
+                //Console.WriteLine("Item not found");
+                return root;
+            }
+            else if (root.Left == null)
+            {
+                return root;
+            }
+            else
+            {
+                return FindMin(root.Left);
+            }
+        }
+
+        public static BstNode FindMax(BstNode root)
+        {
+            if (root == null)
+            {
+                //Console.WriteLine("Item not found");
+                return root;
+            }
+            else if (root.Right == null)
+            {
+                return root;
+            }
+            else
+            {
+                return FindMax(root.Right);
+            }
+        }
+
+        public static int GetHeight(BstNode root)
+        {
+            int leftHeight = 0;
+            int rightHeight = 0;
+            if (root == null)
+            {
+                return -1;
+            }
+
+            leftHeight = GetHeight(root.Left);
+            rightHeight = GetHeight(root.Right);
+            int height = Math.Max(leftHeight, rightHeight) + 1;
+            return height;
+        }
+
+        private static bool IsBstUtil(BstNode root, int minvalue, int maxvalue)
+        {
+            if (root == null)
+                return true;
+            if (root.Data > minvalue && root.Data < maxvalue
+                && IsBstUtil(root.Left, minvalue, root.Data) && IsBstUtil(root.Right, root.Data, maxvalue))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static bool IsBinarySearchTree(BstNode root)
+        {
+            return IsBstUtil(root, int.MinValue, int.MaxValue);
+        }
+
+        //private bool IsSubtreeGreater(BstNode right, int data)
+        //{
+        //    if (right.Data >= data && IsSubtreeGreater(right.Right, data) && IsSubtreeLesser(right.Left, data))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
+
+        //private bool IsSubtreeLesser(BstNode left, int data)
+        //{
+        //    if (left.Data <= data && IsSubtreeGreater(left.Right, data) && IsSubtreeLesser(left.Left, data))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
+
+        public static BstNode Delete(BstNode root, int data)
+        {
+            if (root == null) return root;
+            if (data < root.Data)
+                root.Left = Delete(root.Left, data);
+            else if (data > root.Data)
+                root.Right = Delete(root.Right, data);
+            else
+            {
+                if (root.Left == null && root.Right == null)
+                {
+                    root = null;
+                }
+                else if (root.Left == null)
+                {
+                    root = root.Right;
+                }
+                else if (root.Right == null)
+                {
+                    root = root.Left;
+                }
+                else
+                {
+                    var node = FindMin(root.Right);
+                    root.Data = node.Data;
+                    root.Right = Delete(root.Right, node.Data);
+                }
+            }
+            return root;
         }
 
         private static BstNode GetNewNode(int data)

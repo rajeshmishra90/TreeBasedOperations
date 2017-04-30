@@ -12,12 +12,29 @@
             operations.Insert(17);
             operations.Insert(8);
             operations.Insert(12);
+            operations.Insert(5);
+            operations.Insert(30);
+            operations.Insert(40);
+            operations.Insert(55);
+            operations.Insert(7);
+            operations.Insert(28);
+            operations.Insert(22);
             System.Console.Write("DFS: ");
             BSTOperations.TraverseTreeDFS(BSTOperations.root);
             System.Console.WriteLine();
             BSTOperations.TraverseBFS(BSTOperations.root);
-            int itemToFind = 32;
-            var value = BSTOperations.FindMin(BSTOperations.root, itemToFind);
+
+            //Delete
+            BSTOperations.Delete(BSTOperations.root, 20);
+
+            System.Console.Write("DFS: ");
+            BSTOperations.TraverseTreeDFS(BSTOperations.root);
+            System.Console.WriteLine();
+            BSTOperations.TraverseBFS(BSTOperations.root);
+
+            System.Console.WriteLine("Height: " + BSTOperations.GetHeight(BSTOperations.root));
+            int itemToFind = 25;
+            var value = BSTOperations.FindItem(BSTOperations.root, itemToFind);
             if (value == -1)
             {
                 System.Console.WriteLine("Item not found");
@@ -26,6 +43,17 @@
             {
                 System.Console.WriteLine("Item Found");
             }
+            BstNode min = BSTOperations.FindMin(BSTOperations.root);
+            if (min != null)
+            {
+                System.Console.WriteLine("Min: " + min.Data);
+            }
+            BstNode max = BSTOperations.FindMax(BSTOperations.root);
+            if (max != null)
+            {
+                System.Console.WriteLine("Max: " + max.Data);
+            }
+            System.Console.WriteLine("Is Binary search tree? " + BSTOperations.IsBinarySearchTree(BSTOperations.root));
         }
     }
 }
